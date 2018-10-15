@@ -1,10 +1,1 @@
-
-$bgColor: red !default;
-*,
-body {
-  margin: 0;
-  padding: 0;
-}
-html {
-  background-color: $bgColor;
-}
+@import './common/global';

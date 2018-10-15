@@ -3,18 +3,18 @@ export let navConf = [
     {
         name: 'Login',
         path: '/login',
-        component: () => import('@/views/login/index')
+        component: () => import('@/views/login')
     },
     //注册页
     {
         name: 'Register',
         path: '/register',
-        component: () => import('@/views/register/index')
+        component: () => import('@/views/register')
     },
     //主页
     {
         name: 'Main',
         path: '/main',
-        component: () => import('@/views/main/index')
+        component: () => import('@/views/main')
     }
 ]

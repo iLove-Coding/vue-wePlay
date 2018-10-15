@@ -6,7 +6,10 @@ import router from "./router"; // 路由
 import store from "./stores"; // 状态管理
 
 import App from "./views/App"; // 导入App组件
-// import './scss';
+import component from './components';
+import './scss';
+
+Vue.use(component);
 new Vue({
     router,
     store,
