@@ -4,6 +4,7 @@
         <button @click="handleChangeView('Message')">消息</button>
         <button @click="handleChangeView('Contacts')">联系人</button>
         <!-- <Loading></Loading> -->
+        <Error></Error>
         <keep-alive>
             <component :is="currentView"></component>
         </keep-alive>
