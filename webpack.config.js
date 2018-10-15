@@ -33,6 +33,8 @@ const stylusConfig = [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader',
         }
     }];
 const sassConfig = [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', {
+        loader: 'style-loader'
+    },{
         loader: 'css-loader',
         options: {
             minimize: isProd,
@@ -42,6 +44,11 @@ const sassConfig = [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', {
         loader: 'sass-loader',
         options: {
             sourceMap: !isProd
+        }
+    },{
+        loader: 'sass-resources-loader',
+        options: {
+            resources: path.resolve(__dirname, 'src/scss/index.scss')
         }
     }]
 
@@ -136,14 +143,20 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist') // 将 dist 目录下的文件，作为可访问文件。
         ,compress: true // 开启Gzip压缩
         ,host: 'localhost' // 设置服务器的ip地址，默认localhost
-        ,port: 3000 // 端口号
+        ,port: 3001 // 端口号
         ,open: true // 自动打开浏览器
         ,before(app) {
             ApiMocker(app, path.resolve('./mock/index.js'), {
             // 'GET /api/users/list': 'http://localhost:3000',
             // 'GET /api/userinfo/:id': 'http://localhost:3000',
             })
-        }
+        },
+        historyApiFallback: {
+            rewrites: [{
+              from: /.*/,
+              to: path.posix.join('/', "index.html")
+            }]
+          }
     },
     resolve: {
         extensions: ['.js', '.vue', '.styl', '.scss'], // import引入文件的时候不用加后缀
@@ -151,7 +164,10 @@ module.exports = {
             'node_modules'
             ,path.resolve(__dirname, 'src/components')
             ,path.resolve(__dirname, 'src/assets')
-        ]
+        ],
+        alias: {
+            '@': path.resolve('src')
+        }
     },
     plugins: [
         new VueLoaderPlugin(), // vue加载器
