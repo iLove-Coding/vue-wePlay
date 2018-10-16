@@ -1,13 +1,21 @@
 <template>
     <div class="wp-main">
-        <main-chat></main-chat>
         <main-play></main-play>
+        <main-chat></main-chat>
     </div>
 </template>
 <script src="./main.js"></script>
 <style lang="scss" scoped>
     .wp-main {
-        height: 90%;
-        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 42px;
+        display: flex;
+        justify-content: space-between;
+        background-color: pink;
     }
 </style>

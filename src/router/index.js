@@ -13,6 +13,10 @@ let router = new Router({
         path: '/',
         redirect: {name:'Main'},
       },
+      {
+        path: '/demo',
+        component: () => import('@/views/demo')
+      },
       ...navConf
     ],
   })

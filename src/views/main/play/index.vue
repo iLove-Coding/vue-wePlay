@@ -6,9 +6,8 @@
 <script src="./play.js"></script>
 <style lang="sass" scoped>
 .wp-main-play {
-    float: left;
-    width: 70%;
-    height: 800px;
-    background-color: pink;
+    width: calc(100% - 420px);
+    height: 100%;
+    background-color: white;
 }
 </style>

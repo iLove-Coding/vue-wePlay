@@ -1,5 +1,5 @@
-import MainChat from '@/views/chat';
-import MainPlay from '@/views/play';
+import MainChat from '@/views/main/chat';
+import MainPlay from '@/views/main/play';
 
 export default {
     components: {
