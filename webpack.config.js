@@ -19,7 +19,12 @@ const cssConfig = [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', {
             minimize: isProd,
             sourceMap: !isProd
         }
-    },'postcss-loader'];
+    }, {
+        loader: 'postcss-loader',
+        options: {
+            plugins:[require("autoprefixer")("last 100 versions")]
+        }
+    }];
 const stylusConfig = [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', {
         loader: 'css-loader',
         options: {
@@ -143,7 +148,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist') // 将 dist 目录下的文件，作为可访问文件。
         ,compress: true // 开启Gzip压缩
         ,host: 'localhost' // 设置服务器的ip地址，默认localhost
-        ,port: 3001 // 端口号
+        ,port: 3000 // 端口号
         ,open: true // 自动打开浏览器
         ,before(app) {
             ApiMocker(app, path.resolve('./mock/index.js'), {

@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont-ali" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont-ali"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="add" unicode="&#59103;" d="M512 64a32 32 0 0 1 32 32v256h256a32 32 0 0 1 0 64h-256V672a32 32 0 0 1-64 0v-256H224a32 32 0 0 1 0-64h256v-256a32 32 0 0 1 32-32"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="prompt_fill" unicode="&#59163;" d="M544 320a32 32 0 0 0-64 0v256a32 32 0 0 0 64 0v-256z m-32-160a32 32 0 1 0 0 64 32 32 0 0 0 0-64z m0 608C300.256 768 128 595.744 128 384s172.256-384 384-384 384 172.256 384 384S723.744 768 512 768z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="zuguanli" unicode="&#59249;" d="M896-32H128c-51.2 0-96 44.8-96 96V704c0 51.2 44.8 96 96 96h313.6l115.2-147.2H896c51.2 0 96-44.8 96-96V64c0-51.2-44.8-96-96-96zM128 736c-19.2 0-32-12.8-32-32v-640c0-19.2 12.8-32 32-32h768c19.2 0 32 12.8 32 32V556.8c0 19.2-12.8 32-32 32H524.8L409.6 736H128z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

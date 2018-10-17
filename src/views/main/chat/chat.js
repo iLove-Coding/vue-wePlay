@@ -4,7 +4,8 @@ import Contacts from './contacts';
 export default {
     data() {
         return {
-            currentView: 'Message'
+            currentView: 'Contacts',
+            isSelectMessage: false
         }
     },
     components: {
@@ -14,7 +15,8 @@ export default {
     methods: {
         handleChangeView(comName) {
             this.currentView = comName;
-            this.titleName = this.getTitleName(comName);
+            this.isSelectMessage = comName === 'Message' ? true : false;
+
         }
     }
 }
