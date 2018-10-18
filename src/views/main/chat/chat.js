@@ -1,22 +1,19 @@
-import Message from './message';
-import Contacts from './contacts';
+import HomePage from './homepage';
+import OnChat from './onchat'
 
 export default {
     data() {
         return {
-            currentView: 'Contacts',
-            isSelectMessage: false
+            currentView: 'HomePage'
         }
     },
     components: {
-        Message,
-        Contacts
+        HomePage,
+        OnChat
     },
     methods: {
         handleChangeView(comName) {
             this.currentView = comName;
-            this.isSelectMessage = comName === 'Message' ? true : false;
-
         }
     }
 }
