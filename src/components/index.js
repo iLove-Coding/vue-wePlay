@@ -1,8 +1,9 @@
+import ChatPageComponent from './chat.page/chat-page'
 import LoadingComponent from './loading/loading';
 import ErrorComponent from './error/error';
 import Vue from 'vue'
 
-const components = [LoadingComponent, ErrorComponent];
+const components = [ ChatPageComponent, LoadingComponent, ErrorComponent ];
 
   const install = () => {
     components.forEach(component => {

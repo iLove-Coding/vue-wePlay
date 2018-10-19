@@ -1,6 +1,6 @@
 <template>
-    <section class="wp-main-home">
-        <header class="wp-main-home__head">
+    <wp-chat-page class="wp-main-chat-home">
+        <header class="wp-main-chat-home__head">
             <div class="head-user">
                 <img src="@/assets/img/timg.png" alt="">
             </div>
@@ -11,14 +11,14 @@
             <div class="head-icon head-icon--group" v-if="isSelectMessage"><i class="icon-ali-add"></i></div>
             <div class="head-icon head-icon--friend" v-else><i class="icon-ali-zuguanli"></i></div>
         </header>
-         <keep-alive>
+        <keep-alive>
             <component :is="currentView"></component>
         </keep-alive>
-    </section>
+    </wp-chat-page>
 </template>
 <script src="./homepage.js"></script>
 <style lang="scss" scoped>
-@include b(main-home) {
+@include b(main-chat-home) {
     float: left;
     width: 400px;
     position: relative;

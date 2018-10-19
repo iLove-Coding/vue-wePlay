@@ -1,19 +1,15 @@
-import HomePage from './homepage';
-import OnChat from './onchat'
+import { mapState } from 'vuex'
+import HomePage from './src/homepage'
+import OnChat from './src/onchat'
+import Group from './src/group'
 
 export default {
-    data() {
-        return {
-            currentView: 'HomePage'
-        }
-    },
     components: {
         HomePage,
-        OnChat
+        OnChat,
+        Group
     },
-    methods: {
-        handleChangeView(comName) {
-            this.currentView = comName;
-        }
+    computed: {
+        ...mapState(['currentView'])
     }
 }

@@ -1,0 +1,1 @@
+export const UPDATE_CURRENT_VIEW = 'UPDATE_CURRENT_VIEW'  // 聊天模块视图切换
