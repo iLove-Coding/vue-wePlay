@@ -17,14 +17,14 @@
                     </p>
                 </header>
                 <ul class="group-friend" v-show="index===nowIndex">
-                    <li class="friend-item" v-for="elt in item.list" v-if="elt.status===1" :key="elt.id">
+                    <li class="friend-item" v-for="elt in item.list" v-if="elt.status===1" :key="elt.id" @click="chatHandle">
                         <div class="item-photo"></div>
                         <div class="item-info">
                             <p class="i-name">{{elt.name}}</p>
                             <p class="i-state">[在线]</p>
                         </div>
                     </li>
-                    <li class="friend-item" v-for="elt in item.list" v-if="elt.status===0" :key="elt.id">
+                    <li class="friend-item" v-for="elt in item.list" v-if="elt.status===0" :key="elt.id" @click="chatHandle">
                         <div class="item-photo outline"></div>
                         <div class="item-info">
                             <p class="i-name">{{elt.name}}</p>
@@ -47,6 +47,7 @@
 
 @include b(main-chat) {
     @include e(contacts) {
+        background-color: #f9f8fa;
         height: calc(100% - 50px);
         box-sizing: border-box;
         border-top: solid 1px transparent;

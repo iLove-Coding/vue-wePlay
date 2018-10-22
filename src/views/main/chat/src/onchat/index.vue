@@ -1,5 +1,173 @@
 <template>
-    <wp-chat-pages class="wp-main-chat-onchat">
-        聊天界面
-    </wp-chat-pages>
+    <wp-chat-page class="wp-main-chat-onchat">
+        <header class="wp-main-chat-onchat__head">
+            <div class="return-icon" @click="returnHandle"><i class="icon-ali-back-m"></i></div>
+            <p class="friend-info">
+                <span class="i-name">猪哥哥</span>
+                <span class="i-status">在线</span>
+            </p>
+            <div class="friend-info-icon"><i class="icon-ali-user"></i></div>
+        </header>
+        <div class="wp-main-chat-onchat__content js-chat-content-box">
+            <div class="msg-line my-msg-line clearfix">
+                <div class="photo m-photo"></div>
+                <div class="content m-content"></div>
+            </div>
+            <div class="msg-line friend-msg-line clearfix">
+                <div class="photo f-photo"></div>
+                <div class="content f-content">123</div>
+            </div>
+            <div class="msg-line my-msg-line clearfix" v-for="(value,index) in testObj" :key="index">
+                <div class="photo m-photo"></div>
+                <div class="content m-content">{{value}}</div>
+            </div>
+        </div>
+        <div class="wp-main-chat-onchat__footer">
+            <div class="msg-input">
+                <input type="text" v-model="sendMsg" @keyup.enter.exact="sendHandle">
+            </div>
+            <ul class="more-panel">
+                <li class="panel-item"><i class="icon-ali-tupian"></i></li>
+                <li class="panel-item"><i class="icon-ali-biaoqing1"></i></li>
+            </ul>
+        </div>
+    </wp-chat-page>
 </template>
+<script src="./onchat.js">
+
+</script>
+<style lang="sass" scoped>
+@include b(main-chat-onchat) {
+    @include e(head) {
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        .return-icon {
+            width: 60px;
+            text-align:  center;
+            .icon-ali-back-m {
+                line-height: 60px;
+                font-size: 30px;
+                color: #19191b;
+            }
+        }
+        .friend-info {
+            text-align: center;
+            span {
+                display: block;
+                &.i-name {
+                    font-size: 20px;
+                    line-height: 36px;
+                }
+                &.i-status {
+                    font-size: 14px;
+                }
+            }
+        }
+        .friend-info-icon {
+            width: 60px;
+            text-align: center;
+            .icon-ali-user {
+                line-height: 60px;
+                font-size: 30px;
+                color: #19191b;
+            }
+        }
+    }
+    @include e(content) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ecedf0;
+        width: 100%;
+        height: calc(100% - 90px);
+        box-sizing: border-box;
+        overflow-y: scroll;
+        padding-top: 60px;
+        .msg-line {
+            min-height: 60px;
+            padding: 0 16px;
+            margin: 10px 0;
+            .photo {
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+                background-color: green;
+                &.m-photo {
+                    float: right;
+                }
+                &.f-photo {
+                    float: left;
+                }
+            }
+            .content {
+                max-width: 230px;
+                min-width: 30px;
+                padding: 10px;
+                box-sizing: border-box;
+                min-height: 44px;
+                border-radius: 12px;
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 3px;
+                &.m-content {
+                    float: right;
+                    background-color: #51b6f2;
+                    color: white;
+                    margin-right: 10px;
+                }
+                &.f-content {
+                    float: left;
+                    background-color: white;
+                    color: black;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    @include e(footer) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 90px;
+        width: 100%;
+        background-color: #ecedf0;
+        .msg-input {
+            box-sizing: border-box;
+            padding: 0 10px;
+            width: 100%;
+            input {
+                width: 100%;
+                height: 45px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                box-sizing: border-box;
+                padding: 0 10px;
+                font-size: 14px;
+            }
+        }
+        .more-panel {
+            display: flex;
+            padding: 0 10px;
+            box-sizing: border-box;
+            .panel-item {
+                width: 45px;
+                height: 45px;
+                text-align: center;
+                i {
+                    font-size: 30px;
+                    line-height: 45px;
+                    color: #808492;
+                }
+            }
+        }
+    }
+}
+</style>

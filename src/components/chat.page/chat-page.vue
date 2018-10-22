@@ -15,6 +15,8 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: blue;
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
 }
 </style>

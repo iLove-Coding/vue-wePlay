@@ -1,4 +1,4 @@
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
     data() {
@@ -7,7 +7,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(['friendList'])
+        ...mapState(['currentView', 'friendList'])
     },
     mounted() {
         this.onlineHandle(10001)
@@ -15,9 +15,9 @@ export default {
             elt.onNum = elt.list.filter(elt => elt.status === 1).length;
             elt.allNum = elt.list.length;
         });
-        // console.log(this.friendList);
     },
     methods: {
+        ...mapMutations(['UPDATE_CURRENT_VIEW']),
         displayList(index) {
             this.nowIndex = (this.nowIndex === index) ? -1 : index;
         },
@@ -38,6 +38,9 @@ export default {
                     }
                 })
             });
+        },
+        chatHandle() {
+            this.UPDATE_CURRENT_VIEW('OnChat')
         }
     }
 }

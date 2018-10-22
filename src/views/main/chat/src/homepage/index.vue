@@ -19,12 +19,6 @@
 <script src="./homepage.js"></script>
 <style lang="scss" scoped>
 @include b(main-chat-home) {
-    float: left;
-    width: 400px;
-    position: relative;
-    border-radius: 6px;
-    overflow: hidden;
-    background-color: #f9f8fa;
     @include e(head) {
         display: flex;
         justify-content: space-between;
