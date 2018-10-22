@@ -40,6 +40,15 @@
 
 </script>
 <style lang="sass" scoped>
+@mixin arrow-style($color) {
+    content: '';
+    position: absolute;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: $color;
+}
 @include b(main-chat-onchat) {
     @include e(head) {
         width: 100%;
@@ -110,7 +119,7 @@
                 }
             }
             .content {
-                max-width: 230px;
+                max-width: 240px;
                 min-width: 30px;
                 padding: 10px;
                 box-sizing: border-box;
@@ -123,13 +132,23 @@
                     float: right;
                     background-color: #51b6f2;
                     color: white;
-                    margin-right: 10px;
+                    margin-right: 13px;
+                    position: relative;
+                    &:after {
+                        @include arrow-style(#51b6f2);
+                        right: -12px;
+                    }
                 }
                 &.f-content {
                     float: left;
                     background-color: white;
                     color: black;
-                    margin-left: 10px;
+                    margin-left: 13px;
+                    position: relative;
+                    &:after {
+                        @include arrow-style(white);
+                        left: -12px;
+                    }
                 }
             }
         }
