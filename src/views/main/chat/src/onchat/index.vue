@@ -8,7 +8,7 @@
             </p>
             <div class="friend-info-icon"><i class="icon-ali-user"></i></div>
         </header>
-        <div class="wp-main-chat-onchat__content js-chat-content-box">
+        <div class="wp-main-chat-onchat__content js-chat-content-box" @click="slidePanelHandle('block')">
             <div class="msg-line my-msg-line clearfix">
                 <div class="photo m-photo"></div>
                 <div class="content m-content"></div>
@@ -27,9 +27,12 @@
                 <input type="text" v-model="sendMsg" @keyup.enter.exact="sendHandle">
             </div>
             <ul class="more-panel">
-                <li class="panel-item"><i class="icon-ali-tupian"></i></li>
-                <li class="panel-item"><i class="icon-ali-biaoqing1"></i></li>
+                <li class="panel-item" @click="slidePanelHandle('pictures')"><i class="icon-ali-tupian"></i></li>
+                <li class="panel-item" @click="slidePanelHandle('biaoqing')"><i class="icon-ali-biaoqing1"></i></li>
             </ul>
+            <transition name="slide">
+                <div class="slide-panel" v-show="showSlidePanel==='biaoqing'"></div>
+            </transition>
         </div>
     </wp-chat-page>
 </template>
@@ -168,6 +171,21 @@
                 }
             }
         }
+        .slide-panel {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 300px;
+            background-color: white;
+            overflow-y: scroll;
+        }
     }
+}
+.slide-enter, .slide-leave-to {
+    transform: translateY(280px);
+}
+.slide-enter-active, .slide-leave-active {
+    transition: .3s;
 }
 </style>

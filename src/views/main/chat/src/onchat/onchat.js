@@ -4,11 +4,12 @@ export default {
     data () {
         return {
             sendMsg: '',
+            showSlidePanel: '',
             testObj: ['开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗']
         }
     },
     computed: {
-        ...mapState(['currentView', 'friendList'])
+        ...mapState(['currentView', 'friendList', 'nowChatUser'])
     },
     activated () {
         this.scrollToBottom();
@@ -34,6 +35,12 @@ export default {
         },
         returnHandle() {
             this.UPDATE_CURRENT_VIEW('HomePage');
+        },
+        slidePanelHandle(str) {
+            if (str === 'block') {
+                this.showSlidePanel = '';
+            }
+            this.showSlidePanel = str;
         }
     }
 }

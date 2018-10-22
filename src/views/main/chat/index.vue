@@ -1,7 +1,9 @@
 <template>
     <div class="wp-main-chat">
         <keep-alive>
-            <component :is="currentView"></component>
+            <transition name="component-fade">
+                <component :is="currentView"></component>
+            </transition>
         </keep-alive>
     </div>
 </template>
@@ -16,5 +18,12 @@
     position: relative;
     border-radius: 6px;
     overflow: hidden;
+}
+.component-fade-enter-active, .component-fade-leave-active {
+    transition: .3s;
+}
+.component-fade-enter, .component-fade-leave-to {
+    transform: translateX(10px);
+    opacity: 0;
 }
 </style>

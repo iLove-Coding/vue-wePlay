@@ -1,8 +1,9 @@
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
     computed: {
-        ...mapState(['currentView', 'friendList'])
+        ...mapState(['currentView', 'friendList', 'chatInfoMap']),
+        ...mapGetters(["chatListGetter"])
     },
     methods: {
         ...mapMutations(['UPDATE_CURRENT_VIEW']),

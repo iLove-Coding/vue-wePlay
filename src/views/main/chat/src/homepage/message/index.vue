@@ -1,42 +1,16 @@
 <template>
     <div class="wp-main-chat__message">
         <ul class="message-list">
-            <li class="message-item clearfix" @click="chatHandle">
+            <li class="message-item clearfix" v-for="(item,key) in chatListGetter" :key="key" @click="chatHandle">
                 <div class="item-photo"></div>
                 <div class="item-info">
                     <p class="info-line1">
-                        <span class="i-name">猪妹妹</span>
-                        <span class="i-time">下午6:09</span>
+                        <span class="i-name">{{item.username}}</span>
+                        <span class="i-time">{{item.time}}</span>
                     </p>
                     <p class="info-line2">
-                        <span class="i-content">明天又是元气满满的一天明天又是元气满满的一天明天又是元气满满的一天</span>
+                        <span class="i-content">{{item.font}}</span>
                         <span class="i-read readed">33995</span>
-                    </p>
-                </div>
-            </li>
-            <li class="message-item clearfix">
-                <div class="item-photo"></div>
-                <div class="item-info">
-                    <p class="info-line1">
-                        <span class="i-name">猪哥哥</span>
-                        <span class="i-time">下午6:09</span>
-                    </p>
-                    <p class="info-line2">
-                        <span class="i-content">明天又是元气满满的一天</span>
-                        <span class="i-read">5</span>
-                    </p>
-                </div>
-            </li>
-            <li class="message-item clearfix">
-                <div class="item-photo"></div>
-                <div class="item-info">
-                    <p class="info-line1">
-                        <span class="i-name">猪哥哥</span>
-                        <span class="i-time">下午6:09</span>
-                    </p>
-                    <p class="info-line2">
-                        <span class="i-content">明天又是元气满满的一天</span>
-                        <span class="i-read">5</span>
                     </p>
                 </div>
             </li>

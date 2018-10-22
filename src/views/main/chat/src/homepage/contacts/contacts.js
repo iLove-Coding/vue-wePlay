@@ -3,7 +3,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
     data() {
         return {
-            nowIndex: 1
+            nowIndex: -1
         }
     },
     computed: {
@@ -11,10 +11,6 @@ export default {
     },
     mounted() {
         this.onlineHandle(10001)
-        this.friendList.map(elt => {
-            elt.onNum = elt.list.filter(elt => elt.status === 1).length;
-            elt.allNum = elt.list.length;
-        });
     },
     methods: {
         ...mapMutations(['UPDATE_CURRENT_VIEW']),

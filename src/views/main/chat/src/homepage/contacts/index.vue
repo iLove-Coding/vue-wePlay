@@ -11,9 +11,9 @@
                     <div :class="['item-icon', {unfolder: index===nowIndex}]"><i class="icon-ali-jiantouyou"></i></div>
                     <div class="item-name">{{item.groupname}}</div>
                     <p class="item-num">
-                        <span>{{item.onNum}}</span>
+                        <span>{{item.list.filter(elt => elt.status === 1).length}}</span>
                         <span>/</span>
-                        <span>{{item.allNum}}</span>
+                        <span>{{item.list.length}}</span>
                     </p>
                 </header>
                 <ul class="group-friend" v-show="index===nowIndex">

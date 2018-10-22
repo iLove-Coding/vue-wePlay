@@ -9,7 +9,7 @@ import getters from './getters'
 Vue.use(Vuex);
 
 const state = {
-    currentView: 'HomePage', // 聊天模块视图切换
+    currentView: 'OnChat', // 聊天模块视图切换
     friendList: [
         {
             groupid: 1,
@@ -115,30 +115,35 @@ const state = {
                 }]
         }
     ],
-    chatList: {
-        '10001': {
-
-        },
-        '10002': {
-
-        },
-        '10003': {
-
-        }
+    nowChatUser: {
+        userId: '10001',
+        userName: '猪哥哥'
     },
     chatInfoMap: {
         '10001': [{
             time: '下午3:00',
-            name: '猪哥哥',
-            font: '加油',
+            username: '猪哥哥',
+            font: '加油1',
+            tip: 0
+        },
+        {
+            time: '下午3:00',
+            username: '猪妹妹',
+            font: '加油2',
+            tip: 0
+        }],
+        '10002': [{
+            time: '下午4:00',
+            username: '胖虎',
+            font: '加油1',
             tip: 0
         },
         {
             time: '下午4:00',
-            name: '猪妹妹',
-            font: '么么哒',
+            username: '佩奇',
+            font: '加油2',
             tip: 0
-        }]
+        }],
     }
 }
 
