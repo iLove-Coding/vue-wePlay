@@ -23,7 +23,7 @@
     transition: .3s;
 }
 .component-fade-enter, .component-fade-leave-to {
-    transform: translateX(10px);
+    transform: translateX(50px);
     opacity: 0;
 }
 </style>

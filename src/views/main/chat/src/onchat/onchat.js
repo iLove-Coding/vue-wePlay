@@ -33,8 +33,8 @@ export default {
             this.testObj.push(this.sendMsg);
             this.sendMsg = '';
         },
-        returnHandle() {
-            this.UPDATE_CURRENT_VIEW('HomePage');
+        pageHandle(str) {
+            this.UPDATE_CURRENT_VIEW(str);
         },
         slidePanelHandle(str) {
             if (str === 'block') {

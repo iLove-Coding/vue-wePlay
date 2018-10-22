@@ -1,12 +1,12 @@
 <template>
     <wp-chat-page class="wp-main-chat-onchat">
         <header class="wp-main-chat-onchat__head">
-            <div class="return-icon" @click="returnHandle"><i class="icon-ali-back-m"></i></div>
+            <div class="return-icon" @click="pageHandle('HomePage')"><i class="icon-ali-back-m"></i></div>
             <p class="friend-info">
                 <span class="i-name">猪哥哥</span>
                 <span class="i-status">在线</span>
             </p>
-            <div class="friend-info-icon"><i class="icon-ali-user"></i></div>
+            <div class="friend-info-icon" @click="pageHandle('FriendInfo')"><i class="icon-ali-user"></i></div>
         </header>
         <div class="wp-main-chat-onchat__content js-chat-content-box" @click="slidePanelHandle('block')">
             <div class="msg-line my-msg-line clearfix">
@@ -40,14 +40,13 @@
 
 </script>
 <style lang="sass" scoped>
-@mixin arrow-style($color) {
+@mixin arrow-style() {
     content: '';
     position: absolute;
     top: 15px;
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    border-left-color: $color;
 }
 @include b(main-chat-onchat) {
     @include e(head) {
@@ -135,8 +134,9 @@
                     margin-right: 13px;
                     position: relative;
                     &:after {
-                        @include arrow-style(#51b6f2);
+                        @include arrow-style;
                         right: -12px;
+                        border-left-color: #51b6f2;
                     }
                 }
                 &.f-content {
@@ -146,8 +146,9 @@
                     margin-left: 13px;
                     position: relative;
                     &:after {
-                        @include arrow-style(white);
+                        @include arrow-style;
                         left: -12px;
+                        border-right-color: white;
                     }
                 }
             }
