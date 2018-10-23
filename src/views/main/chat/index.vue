@@ -22,8 +22,11 @@
 .component-fade-enter-active, .component-fade-leave-active {
     transition: .3s;
 }
-.component-fade-enter, .component-fade-leave-to {
-    transform: translateX(50px);
+.component-fade-enter  {
+    transform: translateX(100px);
     opacity: 0;
+}
+.component-fade-leave-to {
+   opacity: 0;
 }
 </style>
