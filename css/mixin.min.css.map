@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/scss/mixins/mixin.scss",
+        "../src/scss/mixins/function.scss",
+        "../src/scss/mixins/config.scss"
+    ],
+    "names": [],
+    "file": "mixin.min.css"
+}

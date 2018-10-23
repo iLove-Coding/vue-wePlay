@@ -9,7 +9,7 @@ import getters from './getters'
 Vue.use(Vuex);
 
 const state = {
-    currentView: 'OnChat', // 聊天模块视图切换
+    currentView: 'GroupManage', // 聊天模块视图切换
     friendList: [
         {
             groupid: 1,

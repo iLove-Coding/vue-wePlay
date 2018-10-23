@@ -1,14 +1,14 @@
 import { mapState } from 'vuex'
 import HomePage from './src/homepage'
 import OnChat from './src/onchat'
-import Group from './src/group'
+import GroupManage from './src/groupmanage'
 import FriendInfo from './src/friendInfo'
 
 export default {
     components: {
         HomePage,
         OnChat,
-        Group,
+        GroupManage,
         FriendInfo
     },
     computed: {
