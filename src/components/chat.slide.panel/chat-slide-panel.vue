@@ -1,6 +1,6 @@
 <template>
     <transition name="wp-mask-fade">
-        <wp-chat-popup type="slide-panel" :bottom="true" :mask="true" @mask-click="ClosePanel">
+        <wp-chat-popup type="slide-panel" :bottom="true" :mask="true" :closeOnClickMask="true" @mask-click="ClosePanel">
             <div class="bottom-wrap">
                 <div class="wrap-content">
                     <div class="wrap-title">
@@ -10,7 +10,7 @@
                         <slot name="btn-main"></slot>
                     </div>
                 </div>
-                <div class="wrap-cancel">
+                <div class="wrap-cancel" @click="ClosePanel">
                     <slot name="btn-sub">取消</slot>
                 </div>
             </div>
@@ -32,22 +32,25 @@
     @include m(bottom) {
         .bottom-wrap {
             position: absolute;
-            left: 10px;
+            left: 0;
             bottom: 0;
-            height: 220px;
-            width: calc(100% - 20px);
+            height: 188px;
+            width: 100%;
+            background-color: #e3e3e3;
             .wrap-content {
-                height: 140px;
+                height: 124px;
                 background-color: rgba(255, 255, 255, .9);
-                border-radius: 16px;
                 margin-bottom: 10px;
                 .wrap-title {
                     width: 100%;
-                    height: 86px;
+                    height: 70px;
                     border-bottom: solid 1px #e4e2e3;
                     box-sizing: border-box;
-                    padding: 20px 38px;
                     text-align: center;
+                    color: #4e4e4e;
+                    padding: 27px 0;
+                    font-size: 16px;
+                    line-height: 16px;
                 }
                 .wrap-btn {
                     height: 54px;
@@ -55,17 +58,16 @@
                     text-align: center;
                     line-height: 54px;
                     font-size: 20px;
-                    color: #cb2e32;
+                    color: #d94000;
                 }
             }
             .wrap-cancel {
-                height: 54px;
+                height: 55px;
                 background-color: rgba(255, 255, 255, .9);
-                border-radius: 16px;
                 text-align: center;
-                line-height: 54px;
+                line-height: 55px;
                 font-size: 20px;
-                color: #0038c0;
+                color: black;
             }
         }
     }
@@ -98,5 +100,4 @@
         transition: .5s;
     }
 }
-
 </style>

@@ -1,28 +1,39 @@
 <template>
     <div>
-        <Loading></Loading>
-        <Error></Error>
+        <button @click="lodingHandle">测试loading组件按钮</button>
+        <wp-loading v-show="isLoading" @mask-click="closeLoading"></wp-loading>
+
         <button @click="slidePanelHandle">测试slide-panel组件按钮</button>
-        <wp-chat-slide-panel v-show="isVisible" @mask-click="ClosePopup">
+        <wp-chat-slide-panel v-show="isSlidePanel" @mask-click="closeSlidePanel">
             <template slot="explain">
-                该分组下还有好友存在，删除后好友会移至默认分组
+                删除该分组后，组内联系人将移至默认分组
             </template>
             <template slot="btn-main">
-                删除
+                删除分组
             </template>
         </wp-chat-slide-panel>
     </div>
 </template>
 <script>
-    import ApiMixin from '@/mixins/api.mixin'
     export default {
-        mixins: [ApiMixin],
+        data() {
+            return {
+                isLoading: false,
+                isSlidePanel: false,
+            }
+        },
         methods: {
-            ClosePopup() {
-                this.hide();
+            closeLoading() {
+                this.isLoading = false;
+            },
+            lodingHandle() {
+                this.isLoading = true;
+            },
+            closeSlidePanel() {
+                this.isSlidePanel = false;
             },
             slidePanelHandle() {
-                this.show();
+                this.isSlidePanel = true;
             }
         }
     }

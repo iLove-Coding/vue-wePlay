@@ -25,6 +25,11 @@
             bottom: {
                 type: Boolean,
                 default: false
+            },
+            // 是否可以通过点击 mask 关闭 Dialog
+            closeOnClickMask: {
+                type: Boolean,
+                default: false
             }
         },
         computed: {
@@ -34,14 +39,16 @@
         },
         methods: {
             maskClick() {
-                this.$emit('mask-click');
+                if (this.closeOnClickMask) {
+                    this.$emit('mask-click');
+                }
             }
         }
     }
 </script>
 <style lang="sass" scoped>
 $popup-mask-bgc: rgb(37, 38, 45);
-$popup-mask-opacity: 0.3;
+$popup-mask-opacity: 0.1;
 
 @include b(chat-popup) {
     position: fixed;
