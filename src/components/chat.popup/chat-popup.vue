@@ -2,7 +2,9 @@
     <div class="wp-chat-popup" :class="typeClass">
         <div class="wp-chat-popup__mask" v-show="mask" @click="maskClick"></div>
         <div :class="['wp-chat-popup__container', {'wp-chat-popup--center': center}, {'wp-chat-popup--bottom': bottom}]">
-            <slot></slot>
+            <div class="wp-chat-popup-main">
+                <slot></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -34,7 +36,7 @@
         },
         computed: {
             typeClass() {
-                return this.type ? `wp-${this.type}` : ''
+                return this.type ? `wp-chat-${this.type}` : ''
             }
         },
         methods: {
@@ -46,10 +48,8 @@
         }
     }
 </script>
-<style lang="sass" scoped>
-$popup-mask-bgc: rgb(37, 38, 45);
-$popup-mask-opacity: 0.1;
-
+<style lang="sass">
+@import '@/scss/variables.scss';
 @include b(chat-popup) {
     position: fixed;
     left: 0;
@@ -65,6 +65,24 @@ $popup-mask-opacity: 0.1;
         height: 100%;
         background-color: $popup-mask-bgc;
         opacity: $popup-mask-opacity;
+    }
+    @include m(center) {
+        .wp-chat-popup-main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+        }
+    }
+    @include m(bottom) {
+        .wp-chat-popup-main {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 188px;
+            width: 100%;
+        }
     }
 }
 </style>

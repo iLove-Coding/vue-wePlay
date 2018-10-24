@@ -1,11 +1,12 @@
 import ChatPageComponent from './chat.page/chat-page';
-import ChatPopup from './chat.popup/chat-popup';
-import ChatSlidePanel from './chat.slide.panel/chat-slide-panel';
-import LoadingComponent from './loading/loading';
-import ErrorComponent from './error/error';
+import ChatPopupComponent from './chat.popup/chat-popup';
+import ChatDialogComponent from './chat.dialog/chat-dialog'
+import ChatSlidePanelComponent from './chat.slide.panel/chat-slide-panel';
+import ChatLoadingComponent from './chat.loading/chat-loading';
+import ChatErrorComponent from './chat.error/chat-error';
 import Vue from 'vue'
 
-const components = [ ChatPageComponent, ChatPopup, ChatSlidePanel, LoadingComponent, ErrorComponent ];
+const components = [ ChatPageComponent, ChatPopupComponent, ChatDialogComponent, ChatSlidePanelComponent, ChatLoadingComponent, ChatErrorComponent ];
 
   const install = () => {
     components.forEach(component => {

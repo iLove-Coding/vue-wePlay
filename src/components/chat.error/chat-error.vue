@@ -3,6 +3,6 @@
 </template>
 <script>
     export default {
-        name: 'Error'
+        name: 'wp-chat-error'
     }
 </script>
