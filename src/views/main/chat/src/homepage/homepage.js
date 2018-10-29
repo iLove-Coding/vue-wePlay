@@ -4,8 +4,8 @@ import Contacts from './contacts';
 export default {
     data() {
         return {
-            currentView: 'Message',
-            isSelectMessage: true
+            currentView: 'Contacts',
+            isSelectMessage: false
         }
     },
     components: {

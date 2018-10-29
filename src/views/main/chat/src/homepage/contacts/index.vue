@@ -9,7 +9,7 @@
             <li class="group-item" v-for="(item, index) in friendList" :key="index">
                 <header class="group-title" @click="displayList(index)">
                     <div :class="['item-icon', {unfolder: index===nowIndex}]"><i class="icon-ali-jiantouyou"></i></div>
-                    <div class="item-name">{{item.groupname}}</div>
+                    <div class="item-name">{{item.group.groupname}}</div>
                     <p class="item-num">
                         <span>{{item.list.filter(elt => elt.status === 1).length}}</span>
                         <span>/</span>
@@ -17,17 +17,17 @@
                     </p>
                 </header>
                 <ul class="group-friend" v-show="index===nowIndex">
-                    <li class="friend-item" v-for="elt in item.list" v-if="elt.status===1" :key="elt.id" @click="chatHandle">
+                    <li class="friend-item" v-for="elt in item.list" v-if="elt.status===1" :key="elt.id" @click="chatHandle(elt.id)">
                         <div class="item-photo"></div>
                         <div class="item-info">
-                            <p class="i-name">{{elt.name}}</p>
+                            <p class="i-name">{{elt.username}}</p>
                             <p class="i-state">[在线]</p>
                         </div>
                     </li>
-                    <li class="friend-item" v-for="elt in item.list" v-if="elt.status===0" :key="elt.id" @click="chatHandle">
+                    <li class="friend-item" v-for="elt in item.list" v-if="elt.status===0" :key="elt.id" @click="chatHandle(elt.id)">
                         <div class="item-photo outline"></div>
                         <div class="item-info">
-                            <p class="i-name">{{elt.name}}</p>
+                            <p class="i-name">{{elt.username}}</p>
                             <p class="i-state">[离线]</p>
                         </div>
                     </li>

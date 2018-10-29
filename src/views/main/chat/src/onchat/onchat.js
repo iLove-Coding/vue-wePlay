@@ -4,37 +4,60 @@ export default {
     data () {
         return {
             sendMsg: '',
-            showSlidePanel: '',
-            testObj: ['开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗','开发建设的肌肤苏东坡看看；来了；开门开门开门疯狂的什么饭看电视免费看吗']
+            showSlidePanel: ''
         }
     },
     computed: {
-        ...mapState(['currentView', 'friendList', 'nowChatUser'])
+        ...mapState(['currentView', 'friendList', 'nowChatUser', 'chatInfoMap'])
     },
     activated () {
         this.scrollToBottom();
     },
     watch: {
-        testObj() {
-          this.scrollToBottom();
+        chatInfoMap: {
+            deep: true,
+            handler() {
+                this.scrollToBottom();
+            }
         }
     },
     methods: {
-        ...mapMutations(['UPDATE_CURRENT_VIEW']),
+        ...mapMutations(['UPDATE_CURRENT_VIEW', 'UPDATE_CHATINFO_MAP', 'UPDATE_NOWCHAT_USER']),
         scrollToBottom() {
             this.$nextTick(() => {
                 let container = this.$el.querySelector(".js-chat-content-box");
                 container.scrollTop = container.scrollHeight;
-                console.log(container.scrollTop);
               })
         },
         sendHandle() {
             if (this.sendMsg === '') return;
-            this.testObj.push(this.sendMsg);
+            const param = {
+                id: this.nowChatUser.id,
+                time: new Date().getTime(),
+                username: this.nowChatUser.username,
+                content: this.sendMsg,
+                type: 1,
+                status: 1,
+                isRead: true
+            }
+            this.UPDATE_CHATINFO_MAP(param);
             this.sendMsg = '';
+        },
+        receiveHandle() {
+            const param = {
+                id: this.nowChatUser.id,
+                time: new Date().getTime(),
+                username: this.nowChatUser.username,
+                content: '嗯嗯',
+                type: 2,
+                status: 1,
+                isRead: true
+            }
+            this.UPDATE_CHATINFO_MAP(param);
         },
         pageHandle(str) {
             this.UPDATE_CURRENT_VIEW(str);
+            this.UPDATE_NOWCHAT_USER();
         },
         slidePanelHandle(str) {
             if (str === 'block') {

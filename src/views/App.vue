@@ -7,7 +7,10 @@
     </div>
 </template>
 <script>
+import Vue from 'vue';
 export default {
-
+	created() {
+		console.log(this.$webSocket);
+	}
 }
 </script>

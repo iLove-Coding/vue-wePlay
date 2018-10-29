@@ -9,140 +9,165 @@ import getters from './getters'
 Vue.use(Vuex);
 
 const state = {
-    currentView: 'GroupManage', // 聊天模块视图切换
+    currentView: 'HomePage', // 聊天模块视图切换
+    loginUser: {
+        id: '10000',
+        username: '小猪妹'
+    },
     friendList: [
         {
-            groupid: 1,
-            groupname: '我的好友',
+            group: {
+                groupid: 1,
+                groupname: '我的好友'
+            },
             list: [{
-                    id: 10001,
+                    id: '10001',
                     groupid: 1,
-                    name: '猪哥哥1',
+                    username: '猪哥哥1',
                     status: 0
                 },
                 {
-                    id: 10002,
+                    id: '10002',
                     groupid: 1,
-                    name: '多啦a梦1',
+                    username: '多啦a梦1',
                     status: 0
                 },
-                {   id: 10003,
+                {   id: '10003',
                     groupid: 1,
-                    name: '工藤新一1',
+                    username: '工藤新一1',
                     status: 1
                 }]
         },
         {
-            groupid: 2,
-            groupname: '公司',
+            group: {
+                groupid: 2,
+                groupname: '公司'
+            },
             list: [{
-                    id: 10004,
+                    id: '10004',
                     groupid: 2,
-                    name: '猪哥哥2',
+                    username: '猪哥哥2',
                     status: 0
                 },
                 {
-                    id: 10005,
+                    id: '10005',
                     groupid: 2,
-                    name: '多啦a梦2',
+                    username: '多啦a梦2',
                     status: 0
                 },
-                {   id: 10006,
-                    name: '工藤新一2',
+                {   id: '10006',
+                    username: '工藤新一2',
                     status: 1
                 }]
         },
         {
-            groupid: 3,
-            groupname: '家人',
+            group: {
+                groupid: 3,
+                groupname: '家人'
+            },
             list: [{
-                    id: 10007,
+                    id: '10007',
                     groupid: 3,
-                    name: '猪哥哥3',
+                    username: '猪哥哥3',
                     status: 0
                 },
                 {
-                    id: 10008,
+                    id: '10008',
                     groupid: 3,
-                    name: '多啦a梦3',
+                    username: '多啦a梦3',
                     status: 0
                 },
-                {   id: 10009,
-                    name: '工藤新一3',
+                {   id: '10009',
+                username: '工藤新一3',
                     status: 1
                 }]
         },
         {
-            groupid: 4,
-            groupname: '小伙伴',
+            group: {
+                groupid: 4,
+                groupname: '小伙伴'
+            },
             list: [{
-                    id: 10010,
+                    id: '10010',
                     groupid: 4,
-                    name: '猪哥哥4',
+                    username: '猪哥哥4',
                     status: 0
                 },
                 {
-                    id: 10011,
+                    id: '10011',
                     groupid: 4,
-                    name: '多啦a梦4',
+                    username: '多啦a梦4',
                     status: 0
                 },
-                {   id: 10012,
+                {   id: '10012',
                     groupid: 4,
-                    name: '工藤新一4',
+                    username: '工藤新一4',
                     status: 1
                 }]
         },
         {
-            groupid: 5,
-            groupname: '黑名单',
+            group: {
+                groupid: 5,
+                groupname: '黑名单'
+            },
             list: [{
-                    id: 100013,
+                    id: '10013',
                     groupid: 5,
-                    name: '猪哥哥5',
+                    username: '猪哥哥5',
                     status: 0
                 },
                 {
-                    id: 10014,
+                    id: '10014',
                     groupid: 5,
-                    name: '多啦a梦5',
+                    username: '多啦a梦5',
                     status: 0
                 },
-                {   id: 10015,
+                {   id: '10015',
                     groupid: 5,
-                    name: '工藤新一5',
+                    username: '工藤新一5',
                     status: 1
                 }]
         }
     ],
     nowChatUser: {
-        userId: '10001',
-        userName: '猪哥哥'
+        // id: '',
+        // groupid: 5,
+        // name: '工藤新一5',
+        // status: 1
     },
-    chatInfoMap: {
+    chatInfoMap: {  // type:1为发送，2为接收
         '10001': [{
-            time: '下午3:00',
-            username: '猪哥哥',
-            font: '加油1',
-            tip: 0
+            time: new Date().getTime(),
+            username: '猪哥哥1',
+            content: '加油1',
+            type: 1,
+            status: false,
+            isRead: true
         },
         {
-            time: '下午3:00',
-            username: '猪妹妹',
-            font: '加油2',
-            tip: 0
+            time: new Date().getTime(),
+            username: '猪哥哥1',
+            content: '加油2',
+            type: 1,
+            status: false,
+            isRead: true
+
         }],
         '10002': [{
-            time: '下午4:00',
-            username: '胖虎',
-            font: '加油1',
-            tip: 0
+            time: new Date().getTime(),
+            username: '多啦a梦1',
+            content: '加油1',
+            type: 2,
+            status: true,
+            isRead: true
         },
         {
-            time: '下午4:00',
-            username: '佩奇',
-            font: '加油2',
-            tip: 0
+            time: new Date().getTime(),
+            username: '多啦a梦1',
+            content: '明天见',
+            type: 2,
+            status: true,
+            isRead: true
         }],
     }
 }

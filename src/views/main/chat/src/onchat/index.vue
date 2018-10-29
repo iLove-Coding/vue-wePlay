@@ -3,23 +3,16 @@
         <header class="wp-main-chat-onchat__head">
             <div class="return-icon" @click="pageHandle('HomePage')"><i class="icon-ali-back-m"></i></div>
             <p class="friend-info">
-                <span class="i-name">猪哥哥</span>
-                <span class="i-status">在线</span>
+                <span class="i-name">{{nowChatUser.username}}</span>
+                <span class="i-status">{{nowChatUser.status===1?'在线':'离线'}}</span>
             </p>
             <div class="friend-info-icon" @click="pageHandle('FriendInfo')"><i class="icon-ali-user"></i></div>
         </header>
         <div class="wp-main-chat-onchat__content js-chat-content-box" @click="slidePanelHandle('block')">
-            <div class="msg-line my-msg-line clearfix">
-                <div class="photo m-photo"></div>
-                <div class="content m-content"></div>
-            </div>
-            <div class="msg-line friend-msg-line clearfix">
-                <div class="photo f-photo"></div>
-                <div class="content f-content">123</div>
-            </div>
-            <div class="msg-line my-msg-line clearfix" v-for="(value,index) in testObj" :key="index">
-                <div class="photo m-photo"></div>
-                <div class="content m-content">{{value}}</div>
+            <button @click="receiveHandle">模拟接收消息</button>
+            <div class="msg-line clearfix" v-for="(item,index) in chatInfoMap[nowChatUser.id]" :key="index">
+                <div class="photo" :class="item.type===1?'m-photo':'f-photo'"></div>
+                <div class="content" :class="item.type===1?'m-content':'f-content'">{{item.content}}</div>
             </div>
         </div>
         <div class="wp-main-chat-onchat__footer">

@@ -1,2 +1,9 @@
-export const UPDATE_CURRENT_VIEW = 'UPDATE_CURRENT_VIEW'  // 聊天模块视图切换
-export const UPDATE_NOWCHATUSER = 'UPDATE_NOWCHATUSER'
+export const UPDATE_CURRENT_VIEW = 'UPDATE_CURRENT_VIEW' // 聊天模块视图切换
+export const LOAD_FRIEND_LIST = 'LOAD_FRIEND_LIST' // 获取好友列表
+export const UPDATE_FRIEND_STATUS = 'UPDATE_FRIEND_STATUS' // 更新好友状态 离线/在线
+export const UPDATE_NOWCHAT_USER = 'UPDATE_NOWCHAT_USER' // 更新当前正在聊天的用户
+export const UPDATE_ADDFRIEND_ARR = 'UPDATE_ADDFRIEND_ARR' // 更新请求添加好友列表
+export const INSERT_FRIEND = 'INSERT_FRIEND' // 添加好友
+export const DELETE_FRIEND = 'DELETE_FRIEND' // 删除好友
+export const UPDATE_CHATINFO_MAP = 'UPDATE_CHATINFO_MAP' // 更新聊天信息记录
+export const UPDATE_CHATINFO_HASREAD = 'UPDATE_CHATINFO_HASREAD' // 消息状态置为已读

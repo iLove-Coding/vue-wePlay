@@ -1,10 +1,10 @@
 <template>
     <div class="wp-main-chat">
-        <keep-alive>
-            <transition name="component-fade">
+        <transition name="component-fade">
+            <keep-alive>
                 <component :is="currentView"></component>
-            </transition>
-        </keep-alive>
+            </keep-alive>
+        </transition>
     </div>
 </template>
 

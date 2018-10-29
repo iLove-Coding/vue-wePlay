@@ -1,7 +1,8 @@
 <template>
     <div class="wp-main-chat__message">
+        <button @click="receiveHandle">模拟接受消息按钮</button>
         <ul class="message-list">
-            <li class="message-item clearfix" v-for="(item,key) in chatListGetter" :key="key" @click="chatHandle">
+            <li class="message-item clearfix" v-for="(item,key) in chatListGetter" :key="key" @click="chatHandle(key)">
                 <div class="item-photo"></div>
                 <div class="item-info">
                     <p class="info-line1">
@@ -9,8 +10,8 @@
                         <span class="i-time">{{item.time}}</span>
                     </p>
                     <p class="info-line2">
-                        <span class="i-content">{{item.font}}</span>
-                        <span class="i-read readed">33995</span>
+                        <span class="i-content">{{item.content}}</span>
+                        <span class="i-read readed" v-if="item.noReadNum>0">{{item.noReadNum>99?'99+':item.noReadNum}}</span>
                     </p>
                 </div>
             </li>

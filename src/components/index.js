@@ -8,12 +8,12 @@ import Vue from 'vue'
 
 const components = [ ChatPageComponent, ChatPopupComponent, ChatDialogComponent, ChatSlidePanelComponent, ChatLoadingComponent, ChatErrorComponent ];
 
-  const install = () => {
-    components.forEach(component => {
-      Vue.component(component.name, component)
-    })
-  }
+const install = () => {
+  components.forEach(component => {
+    Vue.component(component.name, component)
+  })
+}
 
-  export default {
-    install
-  }
+export default {
+  install
+}
