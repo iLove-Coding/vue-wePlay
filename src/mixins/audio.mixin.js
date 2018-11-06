@@ -2,7 +2,7 @@ export default {
     data(){
         return {
             onlineAu: this.createAudio('online-didi'),
-            offlineAu: document.createElement("audio"),
+            // offlineAu: this.createAudio("audio"),
         }
     },
     methods: {
