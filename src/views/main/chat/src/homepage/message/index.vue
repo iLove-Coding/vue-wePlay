@@ -1,6 +1,5 @@
 <template>
     <div class="wp-main-chat__message">
-        <button @click="receiveHandle">模拟接受消息按钮</button>
         <ul class="message-list">
             <li class="message-item clearfix" v-for="(item,key) in chatListGetter" :key="key" @click="chatHandle(key)">
                 <div class="item-photo"></div>

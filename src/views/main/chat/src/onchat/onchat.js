@@ -37,23 +37,10 @@ export default {
                 username: this.nowChatUser.username,
                 content: this.sendMsg,
                 type: 1,
-                status: 1,
                 isRead: true
             }
             this.UPDATE_CHATINFO_MAP(param);
             this.sendMsg = '';
-        },
-        receiveHandle() {
-            const param = {
-                id: this.nowChatUser.id,
-                time: new Date().getTime(),
-                username: this.nowChatUser.username,
-                content: '嗯嗯',
-                type: 2,
-                status: 1,
-                isRead: true
-            }
-            this.UPDATE_CHATINFO_MAP(param);
         },
         pageHandle(str) {
             this.UPDATE_CURRENT_VIEW(str);

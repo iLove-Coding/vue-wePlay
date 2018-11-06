@@ -38,7 +38,6 @@ export default {
                     username: opt.username,
                     content: opt.content,
                     type: opt.type,
-                    status: opt.status,
                     isRead: opt.isRead
                 }
             ])
@@ -49,15 +48,16 @@ export default {
                     username: opt.username,
                     content: opt.content,
                     type: opt.type,
-                    status: opt.status,
                     isRead: opt.isRead
                 }
             ])
         }
     },
     [UPDATE_CHATINFO_HASREAD](state, value) {
-        state.chatInfoMap[value].forEach(elt => {
-            elt.isRead = true;
-        })
+        if(state.chatInfoMap[value]) {
+            state.chatInfoMap[value].forEach(elt => {
+                elt.isRead = true;
+            })
+        }
     }
 }

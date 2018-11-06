@@ -9,7 +9,6 @@
             <div class="friend-info-icon" @click="pageHandle('FriendInfo')"><i class="icon-ali-user"></i></div>
         </header>
         <div class="wp-main-chat-onchat__content js-chat-content-box" @click="slidePanelHandle('block')">
-            <button @click="receiveHandle">模拟接收消息</button>
             <div class="msg-line clearfix" v-for="(item,index) in chatInfoMap[nowChatUser.id]" :key="index">
                 <div class="photo" :class="item.type===1?'m-photo':'f-photo'"></div>
                 <div class="content" :class="item.type===1?'m-content':'f-content'">{{item.content}}</div>

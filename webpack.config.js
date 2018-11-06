@@ -132,7 +132,7 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(mp4|ogg|svg)$/,use: ['file-loader']
+                test: /\.(mp4|wav|ogg|svg)$/,use: ['file-loader']
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
@@ -148,7 +148,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist') // 将 dist 目录下的文件，作为可访问文件。
         ,compress: true // 开启Gzip压缩
         ,host: 'localhost' // 设置服务器的ip地址，默认localhost
-        ,port: 3000 // 端口号
+        ,port: 4000 // 端口号
         ,open: true // 自动打开浏览器
         ,before(app) {
             ApiMocker(app, path.resolve('./mock/index.js'), {
