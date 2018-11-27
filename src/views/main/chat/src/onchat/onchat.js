@@ -37,7 +37,8 @@ export default {
                 username: this.nowChatUser.username,
                 content: this.sendMsg,
                 type: 1,
-                isRead: true
+                isRead: true,
+                isSend: false
             }
             this.UPDATE_CHATINFO_MAP(param);
             this.sendMsg = '';

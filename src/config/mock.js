@@ -128,3 +128,10 @@ export const receiveMsgType3 = {
     content: '哦哦，好嘞',
     type: 2
 }
+
+export const mockMsg = {
+  msgId: 2,
+  sendXf: '10002',
+  text: '哦哦，好嘞',
+  serverTime: new Date().getTime()
+}

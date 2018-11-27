@@ -22,21 +22,21 @@ const state = {
         // status: 1
     },
     chatInfoMap: {  // type:1为发送，2为接收
-        '10001': [{
-            time: new Date().getTime(),
-            content: '加油猪妹妹',
-            username: '猪哥哥',
-            type: 1,
-            isRead: true
-        },
-        {
-            time: new Date().getTime(),
-            content: '爱你么么哒',
-            username: '猪哥哥',
-            type: 1,
-            isRead: true
+        // '10001': [{
+        //     time: new Date().getTime(),
+        //     content: '加油猪妹妹',
+        //     username: '猪哥哥',
+        //     type: 1,
+        //     isRead: true
+        // },
+        // {
+        //     time: new Date().getTime(),
+        //     content: '爱你么么哒',
+        //     username: '猪哥哥',
+        //     type: 1,
+        //     isRead: true
 
-        }]
+        // }]
     }
 }
 
