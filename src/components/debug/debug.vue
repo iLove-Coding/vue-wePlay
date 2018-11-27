@@ -84,8 +84,20 @@ export default {
             this.UPDATE_FRIEND_STATUS(opt);
         },
         chatTypeHandle(type) {
-          const manager = chatHandlerMap.get('2')
-          new manager(receiveMsgType1)
+          let msg = ''
+          switch (type) {
+            case 1:
+              msg = receiveMsgType1;
+              break;
+            case 2:
+              msg = receiveMsgType2;
+              break;
+            case 3:
+              msg = receiveMsgType3;
+              break;
+          }
+          const manager = chatHandlerMap.get('2');
+          manager.init(msg);
         }
     }
 }

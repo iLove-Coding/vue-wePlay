@@ -6,13 +6,12 @@ export default class ChatManager extends BaseHandle {
   constructor(msg) {
     super();
     this.msg = msg;
-    this.init(msg);
   }
   handleResponse() {
 
   }
-  handlePush() {
-    const { serverTime, text, sendXf } = this.msg;
+  handlePush(msg) {
+    const { serverTime, text, sendXf } = msg;
     const param = {
       id: sendXf,
       time: serverTime,
