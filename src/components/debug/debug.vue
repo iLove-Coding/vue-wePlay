@@ -19,6 +19,7 @@
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
 import { friendList, receiveMsgType1, receiveMsgType2, receiveMsgType3 } from '@/config/mock'
+import { chatHandlerMap } from '@/config/msgid.map'
 export default {
     name: 'wp-debug',
     data() {
@@ -83,28 +84,8 @@ export default {
             this.UPDATE_FRIEND_STATUS(opt);
         },
         chatTypeHandle(type) {
-            let receiveMsg;
-            switch(type) {
-                case 1:
-                    receiveMsg = receiveMsgType1;
-                    break;
-                case 2:
-                    receiveMsg = receiveMsgType2;
-                    break;
-                case 3:
-                    receiveMsg = receiveMsgType3;
-                    break;
-            }
-            const param = {
-                id: receiveMsg.id,
-                time: new Date().getTime(),
-                content: receiveMsg.content,
-                username: this.friendIdMapGetter[receiveMsg.id].username,
-                type: receiveMsg.type,
-                isRead: this.nowChatUser.id===receiveMsg.id ? true : false
-            };
-            this.UPDATE_CHATINFO_MAP(param);
-            this.soundManager.playOnline();
+          const manager = chatHandlerMap.get('2')
+          new manager(receiveMsgType1)
         }
     }
 }

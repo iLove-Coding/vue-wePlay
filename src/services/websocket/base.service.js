@@ -8,7 +8,7 @@ export default class BaseHandle {
     }
   }
   handle(msg) {
-    if(msg.type===0) {
+    if(msg.type === 0) {
       this.handleResponse()
     } else {
       this.handlePush()

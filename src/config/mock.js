@@ -104,34 +104,39 @@ export const friendList = [
  * 类型1（新会话）-- 工藤新一
 */
 export const receiveMsgType1 = {
-    id: '10003',
-    time: new Date().getTime(),
-    content: '你好',
+    msgId: '2',
+    sendXf: '10003',
+    serverTime: new Date().getTime(),
+    text: '你好',
     type: 2,
-    isRead: false
+    ret: 1
 }
 /**
  * 类型2（已存在) --猪哥哥
 */
 export const receiveMsgType2 = {
-    id: '10001',
+    msgId: '2',
+    sendXf: '10002',
     time: new Date().getTime(),
     content: '么么哒',
-    type: 2
+    type: 2,
+    ret: 1
 }
 /**
  * 类型3（正在聊天） --哆啦a梦
 */
-export const receiveMsgType3 = {
-    id: '10002',
-    time: new Date().getTime(),
-    content: '哦哦，好嘞',
-    type: 2
-}
+// export const receiveMsgType3 = {
+//     id: '10002',
+//     time: new Date().getTime(),
+//     content: '哦哦，好嘞',
+//     type: 2
+// }
 
-export const mockMsg = {
+export const receiveMsgType3 = {
   msgId: 2,
   sendXf: '10002',
   text: '哦哦，好嘞',
-  serverTime: new Date().getTime()
+  serverTime: new Date().getTime(),
+  type: 2,
+  ret: 1
 }
